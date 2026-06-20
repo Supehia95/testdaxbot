@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My  Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+</head>
+<body style="margin:0">
+  <div class="desktopsize">
+     Web Chat Setup 
+    <div>  </div>
+  </div>
+  
+</body>
+</html>
+<script type='text/javascript'>
+ 
+ 
+	
+	function pushPrechatFields() {
+		try {
+		  if (window.embeddedservice_bootstrap?.prechatAPI?.setHiddenPrechatFields) {
+		  
+			const preChatFields = {
+        "product_name": "Daxko Operations", 
+        "daxko_account_id": "3011687",
+        "sf_account_id": "0014u00001nMj5dAAC",
+        "username_email": "tom.cruise@abc.com",
+        "first_name": "Tom", 
+        "last_name": "Cruise", 
+        "phone_number": "+1111111111" 
+      }; // pass more params
+			console.log("Prechat fields sent:", preChatFields);
+			embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields(preChatFields);
+		  }
+		} catch (e) {
+		  console.warn("Prechat push failed:", e);
+		}
+	}
+
+	
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+			embeddedservice_bootstrap.init(
+				'00DWC000008gYyL',
+				'Daxko_Chat',
+				'https://daxkoneworg--uat.sandbox.my.site.com/ESWDaxkoChat1780643769559',
+				{
+					scrt2URL: 'https://daxkoneworg--uat.sandbox.my.salesforce-scrt.com'
+				}
+			);
+
+			window.addEventListener("onEmbeddedMessagingReady", () => {
+           		pushPrechatFields();
+       		});
+			window.addEventListener('onEmbeddedMessagingConversationStarted', function (event) {
+				console.log('Conversation started: ', event);
+			});
+			window.addEventListener('onEmbeddedMessageSent', function (event) {
+				console.log('Conversation onEmbeddedMessageSent: ', event);
+			});
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://tr1755503902062.my.site.com/ESWTruffelDemo1759523968902/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+	 
+ 
