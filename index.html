@@ -64,6 +64,8 @@
 			);
 
 			window.addEventListener("onEmbeddedMessagingReady", () => {
+				console.log('abc ready');
+				hideWidget();
            		pushPrechatFields();
        		});
 			window.addEventListener('onEmbeddedMessagingConversationStarted', function (event) {
@@ -89,7 +91,7 @@
 
 
 	function showWidget() {
-		document.getElementById('embedded-messaging')?.classList.add('visible');
+		document.getElementById('embedded-messaging')?.classList.remove('visible');
 
 	}
 	function hideWidget() {
