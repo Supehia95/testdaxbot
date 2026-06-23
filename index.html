@@ -15,19 +15,31 @@
 <script type='text/javascript'>
  
  
+
+
+
+
+
+
+
+
+
 	
 	function pushPrechatFields() {
 		try {
 		  if (window.embeddedservice_bootstrap?.prechatAPI?.setHiddenPrechatFields) {
 		  
 			const preChatFields = {
-        "product_name": "Daxko Operations", 
-        "daxko_account_id": "3011687",
-        "sf_account_id": "0014u00001nMj5dAAC",
-        "username_email": "tom.cruise@abc.com",
-        "first_name": "Tom", 
-        "last_name": "Cruise", 
-        "phone_number": "+1111111111" 
+				"SourceUrl":window.location.href,
+				"Product_Name": "Daxko_Operations",  // Name of the product
+				"Daxko_Account_ID": "3011687",  // Daxko Account Id
+				"SF_Account_ID": "0014u00001nMj5dAAC", // Daxko Salesforce Account Id 
+				"UserName_Email": "tom.cruise@abc.com", // User email/username
+				"First_Name": "Tom",  // First name
+				"Last_Name": "Cruise", //  Last Name
+				"Phone_Number": "+1111111111"  // Phone number
+				"Root_Partition_ID": "root Id"  // Root partition id
+       
       }; // pass more params
 			console.log("Prechat fields sent:", preChatFields);
 			embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields(preChatFields);
