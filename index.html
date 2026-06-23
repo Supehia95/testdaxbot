@@ -74,6 +74,7 @@
 			});
 			window.addEventListener('onEmbeddedMessagingWindowClosed', function (event) {
 				console.log('Conversation onEmbeddedMessagingWindowClosed: ', event);
+				hideWidget();
 			});
 		} catch (err) {
 			console.error('Error loading Embedded Messaging: ', err);
@@ -81,15 +82,30 @@
 	};
 	function doCallAgentforce() {
            
-    
+    showWidget();
     embeddedservice_bootstrap.utilAPI.launchChat();
+		
 }
+
+
+	function showWidget() {
+		document.getElementById('embedded-messaging')?.classList.add('visible');
+
+	}
+	function hideWidget() {
+		document.getElementById('embedded-messaging')?.classList.add('visible');
+
+	}
 	
 </script>
 <script type='text/javascript' src='https://daxkoneworg--uat.sandbox.my.site.com/ESWDaxkoChat1780643769559/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>	 
  
 <style>
 		.embeddedMessagingConversationButtonWrapper .embeddedMessagingConversationButton {
+	    visibility: hidden;
+	}
+
+	.embeddedMessagingConversationButtonWrapper .embeddedMessagingConversationButton {
 	    visibility: hidden;
 	}
 
