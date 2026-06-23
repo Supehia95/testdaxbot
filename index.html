@@ -7,7 +7,7 @@
 <body style="margin:0">
   <div class="desktopsize">
      Web Chat Setup 
-    <div>  </div>
+    <div> <button onclick="doCallAgentforce()"> Start Chat</button> </div>
   </div>
   
 </body>
@@ -75,6 +75,13 @@
 			console.error('Error loading Embedded Messaging: ', err);
 		}
 	};
+	
 </script>
 <script type='text/javascript' src='https://daxkoneworg--uat.sandbox.my.site.com/ESWDaxkoChat1780643769559/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>	 
  
+<style>
+		.embeddedMessagingConversationButtonWrapper .embeddedMessagingConversationButton {
+	    visibility: hidden;
+	}
+
+</style>
